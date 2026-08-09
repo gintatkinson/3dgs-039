@@ -21,9 +21,16 @@ This Epic encompasses the `ietf-inet-types` YANG utility module defined in RFC 6
 ### Associated Use Cases & User Stories
 
 #### Associated Use Cases
+- [ ] #35 - [[RFC6991-INET] Validate IP Address Instance Against RFC 6991 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-05-rfc6991-inet-validate-ip-address-instance.md) (validates IP address typed data against RFC 6991 type patterns and constraints)
+- [ ] #36 - [[RFC6991-INET] Resolve Host and Domain Identifiers Using RFC 6991 Types](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-06-rfc6991-inet-resolve-host-and-domain-identifiers.md) (resolves host identifiers through IP address parsing and domain-name validation)
 Use Cases are deferred to Phase 2 specification engineering.
 
 #### Associated User Stories
+- [ ] #30 - [[RFC6991-INET] IP Address Scope and Zone Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-10-rfc6991-inet-ip-address-scope-and-zone-handling.md) (specifies IPv4/IPv6 address parsing, zone index handling, and address union resolution)
+- [ ] #34 - [[RFC6991-INET] IP Prefix and Mask Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-11-rfc6991-inet-ip-prefix-and-mask-validation.md) (specifies IPv4/IPv6 prefix notation validation and prefix union resolution)
+- [ ] #32 - [[RFC6991-INET] Domain Name Validation Rules](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-12-rfc6991-inet-domain-name-validation-rules.md) (specifies domain-name label format, length limits, and TLD constraints)
+- [ ] #31 - [[RFC6991-INET] Host Identifier Resolution](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-13-rfc6991-inet-host-identifier-resolution.md) (specifies host union resolution strategy for IP address vs domain-name disambiguation)
+- [ ] #33 - [[RFC6991-INET] Port Number and Protocol Field Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-14-rfc6991-inet-port-number-and-protocol-field-validation.md) (specifies port-number range validation, dscp 6-bit encoding, and ipv6-flow-label 20-bit constraints)
 User Stories are deferred to Phase 2 specification engineering.
 
 ## 3. Architecture
