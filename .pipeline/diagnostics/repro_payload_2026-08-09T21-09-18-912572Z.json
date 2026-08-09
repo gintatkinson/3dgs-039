@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-08-09T21:09:18.912572Z",
+  "tooling": {
+    "name": "parity_auditor",
+    "version": "1.0.0"
+  },
+  "context": {
+    "command": "./skills/spec-orchestrator/scripts/verify_model_coverage.py --spec-only --allow-missing-specs",
+    "exit_code": 1,
+    "downstream_repo": "https://github.com/gintatkinson/3dgs-039.git",
+    "commit_hash": "f99244ecb564921487d1ea136ee9be4b9b55b8a0"
+  },
+  "failure": {
+    "traceback": "",
+    "error_summary": [
+      "User Story us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md sequence diagram message 'operator->>geoLocation: selectCoordinateCase(caseName: String)' calls operation 'selectCoordinateCase' which is not defined on class 'GeoLocation' in any class diagram.",
+      "User Story us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md sequence diagram message 'geoLocation->>locationChoice: activateCase(caseName: String)' calls operation 'activateCase' which is not defined on class 'Location' in any class diagram.",
+      "User Story us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md sequence diagram message 'operator->>geoLocation: requestCoordinateTransform(targetCase: String)' calls operation 'requestCoordinateTransform' which is not defined on class 'GeoLocation' in any class diagram.",
+      "User Story us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md sequence diagram message 'geoLocation->>referenceFrame: fetchTransformParameters()' calls operation 'fetchTransformParameters' which is not defined on class 'ReferenceFrame' in any class diagram."
+    ]
+  },
+  "reproduction_case": {
+    "target_file": "",
+    "snippet_type": "text",
+    "snippet_content": ""
+  }
+}

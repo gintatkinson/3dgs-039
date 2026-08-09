@@ -24,15 +24,21 @@ Defines the frame of reference for geo-location coordinate values. The reference
 ```mermaid
 classDiagram
     class GeoLocation {
+        +ReferenceFrame resolveReferenceFrame() [1]
     }
     class ReferenceFrame {
         +String astronomicalBody "[0..1]"
         +String alternateSystem "[0..1]"
+        +void setAstronomicalBody(String bodyName)
+        +GeodeticDatum resolveGeodeticDatum(String bodyName) [1]
     }
     class GeodeticSystem {
         +String geodeticDatum "[0..1]"
         +Real coordAccuracy "[0..1]"
         +Real heightAccuracy "[0..1]"
+        +void setGeodeticDatum(String datumName)
+        +void setCoordAccuracy(Real accuracy)
+        +void setHeightAccuracy(Real accuracy)
     }
     class AlternateSystems {
         <<feature>>
