@@ -21,13 +21,13 @@ This Epic encompasses the `ietf-inet-types` YANG utility module defined in RFC 9
 ### Associated Use Cases & User Stories
 
 #### Associated Use Cases
-- [ ] #23 - [[RFC9911-INET] Validate Network Address Instance Against RFC 9911 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-03-validate-network-address-instance-against-rfc-9911-type-constraint.md) (semantic linkage justification)
+- [ ] #23 - [[RFC9911-INET] Validate Network Address Instance Against RFC 9911 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-03-validate-network-address-instance-against-rfc-9911-type-constraint.md) (models validation of IP addresses, prefixes, hostnames, and URIs against RFC 9911 inet-types constraints including zone and link-local handling)
 Use Cases are deferred to Phase 2 specification engineering.
 
 #### Associated User Stories
-- [ ] #18 - [[RFC9911-INET] IP Address Scope and Zone Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-07-rfc9911-inet-ip-address-scope-and-zone-handling.md) (semantic linkage justification)
-- [ ] #19 - [[RFC9911-INET] Hostname Validation Rules](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-08-rfc9911-inet-hostname-validation-rules.md) (semantic linkage justification)
-- [ ] #20 - [[RFC9911-INET] IP Prefix and Mask Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-09-rfc9911-inet-ip-prefix-and-mask-validation.md) (semantic linkage justification)
+- [ ] #18 - [[RFC9911-INET] IP Address Scope and Zone Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-07-rfc9911-inet-ip-address-scope-and-zone-handling.md) (specifies IPv4/IPv6 zone index handling, no-zone constraints, and link-local address patterns)
+- [ ] #19 - [[RFC9911-INET] Hostname Validation Rules](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-08-rfc9911-inet-hostname-validation-rules.md) (specifies host-name format rules per RFC 952/1123, domain-name label constraints, and case-insensitive comparison)
+- [ ] #20 - [[RFC9911-INET] IP Prefix and Mask Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-09-rfc9911-inet-ip-prefix-and-mask-validation.md) (specifies ipv4-prefix and ipv6-prefix slash notation, address-and-prefix format, and prefix union resolution)
 User Stories are deferred to Phase 2 specification engineering.
 
 ## 3. Architecture

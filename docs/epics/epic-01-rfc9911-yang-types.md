@@ -22,18 +22,18 @@ This Epic encompasses the `ietf-yang-types` YANG utility module defined in RFC 9
 ### Associated Use Cases & User Stories
 
 #### Associated Use Cases
-- [ ] #21 - [[RFC9911-YANG] Define Custom Data Type Derived From Base YANG Type](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-01-define-custom-data-type-derived-from-base-yang-type.md) (semantic linkage justification)
-- [ ] #22 - [[RFC9911-YANG] Validate Data Instance Against RFC 9911 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-02-validate-data-instance-against-rfc-9911-type-constraint.md) (semantic linkage justification)
-- [ ] #24 - [[RFC9911-CROSS] Manage Temporal Data Using RFC 9911 Date and Time Types](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-04-manage-temporal-data-using-rfc-9911-date-and-time-types.md) (semantic linkage justification)
+- [ ] #21 - [[RFC9911-YANG] Define Custom Data Type Derived From Base YANG Type](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-01-define-custom-data-type-derived-from-base-yang-type.md) (models the type-derivation workflow for schema designers defining new YANG types from RFC 9911 base types)
+- [ ] #22 - [[RFC9911-YANG] Validate Data Instance Against RFC 9911 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-02-validate-data-instance-against-rfc-9911-type-constraint.md) (models validation of data instances against RFC 9911 counter, gauge, date-time, identifier, and address type constraints)
+- [ ] #24 - [[RFC9911-CROSS] Manage Temporal Data Using RFC 9911 Date and Time Types](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-04-manage-temporal-data-using-rfc-9911-date-and-time-types.md) (models temporal operations including timestamp comparison, canonical conversion, and leap second handling)
 Use Cases are deferred to Phase 2 specification engineering.
 
 #### Associated User Stories
-- [ ] #12 - [[RFC9911-YANG] Counter Wrapping Behavior](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-01-rfc9911-yang-counter-wrapping-behavior.md) (semantic linkage justification)
-- [ ] #13 - [[RFC9911-YANG] Gauge Value Clamping Behavior](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-02-rfc9911-yang-gauge-value-clamping-behavior.md) (semantic linkage justification)
-- [ ] #14 - [[RFC9911-YANG] Object Identifier Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-03-rfc9911-yang-object-identifier-validation.md) (semantic linkage justification)
-- [ ] #15 - [[RFC9911-YANG] Date-and-Time Formatting and Canonical Form](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-04-rfc9911-yang-date-and-time-formatting-and-canonical-form.md) (semantic linkage justification)
-- [ ] #16 - [[RFC9911-YANG] Timeticks and Timestamp Epoch Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-05-rfc9911-yang-timeticks-and-timestamp-epoch-handling.md) (semantic linkage justification)
-- [ ] #17 - [[RFC9911-YANG] Date and Time Component Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-06-rfc9911-yang-date-and-time-component-validation.md) (semantic linkage justification)
+- [ ] #12 - [[RFC9911-YANG] Counter Wrapping Behavior](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-01-rfc9911-yang-counter-wrapping-behavior.md) (specifies counter32/64 monotonic increase and wrap-at-max behavior with discontinuity handling)
+- [ ] #13 - [[RFC9911-YANG] Gauge Value Clamping Behavior](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-02-rfc9911-yang-gauge-value-clamping-behavior.md) (specifies gauge32/64 value clamping to min/max bounds and overshoot recovery)
+- [ ] #14 - [[RFC9911-YANG] Object Identifier Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-03-rfc9911-yang-object-identifier-validation.md) (specifies ASN.1 OID sub-identifier constraints including first-arc limits and 128 sub-id maximum)
+- [ ] #15 - [[RFC9911-YANG] Date-and-Time Formatting and Canonical Form](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-04-rfc9911-yang-date-and-time-formatting-and-canonical-form.md) (specifies RFC 3339 date-and-time formatting, timezone offset handling, and canonical form selection)
+- [ ] #16 - [[RFC9911-YANG] Timeticks and Timestamp Epoch Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-05-rfc9911-yang-timeticks-and-timestamp-epoch-handling.md) (specifies timeticks wrap-at-2^32 behavior and timestamp zeroing on associated timeticks rollover)
+- [ ] #17 - [[RFC9911-YANG] Date and Time Component Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-06-rfc9911-yang-date-and-time-component-validation.md) (specifies date-no-zone, time-no-zone, and sub-second precision time-unit types with range restrictions)
 User Stories are deferred to Phase 2 specification engineering.
 
 ## 3. Architecture
