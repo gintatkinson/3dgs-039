@@ -91,5 +91,5 @@ From RFC 9911, Section 1:
 > The "ietf-inet-types" module defines data types relevant for the Internet Protocol suite.
 
 ## 6. Source References
-Structural Schema: [ietf-inet-types@2025-12-22.yang](https://github.com/gintatkinson/3dgs-039/blob/main/schema/ietf-inet-types%402025-12-22.yang)
+Structural Schema: [ietf-inet-types@2025-12-22.yang](https://raw.githubusercontent.com/gintatkinson/3dgs-039/main/schema/ietf-inet-types%402025-12-22.yang)
 Normative Specification: [RFC 9911](https://datatracker.ietf.org/doc/rfc9911/) (Section 4: Internet Protocol Suite Types)

@@ -221,7 +221,7 @@ From RFC 9911, Section 4:
 > The email-address type represents an internationalized email address. The email address format is defined by the addr-spec ABNF rule in Section 3.4.1 of RFC 5322. This format has been extended by RFC 6532 to support internationalized email addresses. Implementations MUST support the internationalization extensions of RFC 6532.
 
 ## Source References
-Structural Schema: [ietf-inet-types@2025-12-22.yang](https://github.com/gintatkinson/3dgs-039/blob/main/schema/ietf-inet-types%402025-12-22.yang) (Collection: domain name and URI types)
+Structural Schema: [ietf-inet-types@2025-12-22.yang](https://raw.githubusercontent.com/gintatkinson/3dgs-039/main/schema/ietf-inet-types%402025-12-22.yang) (Collection: domain name and URI types)
 Normative Specification: [RFC 9911](https://datatracker.ietf.org/doc/rfc9911/) (Section 4: Internet Protocol Suite Types, Table 2)
 
 ## Logical UI & Interface Bindings

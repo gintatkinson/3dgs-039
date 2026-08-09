@@ -244,7 +244,7 @@ From RFC 9911, Section 4:
 > The ipv6-address-link-local type represents a link-local IPv6 address in the prefix fe80::/10 as defined in Section 2.4 of RFC 4291.
 
 ## Source References
-Structural Schema: [ietf-inet-types@2025-12-22.yang](https://github.com/gintatkinson/3dgs-039/blob/main/schema/ietf-inet-types%402025-12-22.yang) (Collection: types related to IP addresses and hostnames)
+Structural Schema: [ietf-inet-types@2025-12-22.yang](https://raw.githubusercontent.com/gintatkinson/3dgs-039/main/schema/ietf-inet-types%402025-12-22.yang) (Collection: types related to IP addresses and hostnames)
 Normative Specification: [RFC 9911](https://datatracker.ietf.org/doc/rfc9911/) (Section 4: Internet Protocol Suite Types, Table 2)
 
 ## Logical UI & Interface Bindings

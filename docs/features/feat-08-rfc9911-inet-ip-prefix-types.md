@@ -198,7 +198,7 @@ From RFC 9911, Section 4:
 > The ipv6-address-and-prefix type represents an IPv6 address and an associated IPv6 prefix. The prefix length is given by the number following the slash character and must be less than or equal to 128.
 
 ## Source References
-Structural Schema: [ietf-inet-types@2025-12-22.yang](https://github.com/gintatkinson/3dgs-039/blob/main/schema/ietf-inet-types%402025-12-22.yang) (Collection: types related to IP addresses and hostnames)
+Structural Schema: [ietf-inet-types@2025-12-22.yang](https://raw.githubusercontent.com/gintatkinson/3dgs-039/main/schema/ietf-inet-types%402025-12-22.yang) (Collection: types related to IP addresses and hostnames)
 Normative Specification: [RFC 9911](https://datatracker.ietf.org/doc/rfc9911/) (Section 4: Internet Protocol Suite Types, Table 2)
 
 ## Logical UI & Interface Bindings
