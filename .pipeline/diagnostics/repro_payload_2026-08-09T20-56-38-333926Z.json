@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-08-09T20:56:38.333926Z",
+  "tooling": {
+    "name": "parity_auditor",
+    "version": "1.0.0"
+  },
+  "context": {
+    "command": "skills/spec-orchestrator/scripts/verify_model_coverage.py --spec-only --allow-missing-specs",
+    "exit_code": 1,
+    "downstream_repo": "https://github.com/gintatkinson/3dgs-039.git",
+    "commit_hash": "4aa8b4d265ae7d38c4d7b487d853d4ac557c7ccf"
+  },
+  "failure": {
+    "traceback": "",
+    "error_summary": [
+      "Feature feat-18-rfc9179-geo-temporal-location-attributes.md class 'GeoLocation' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-18-rfc9179-geo-temporal-location-attributes.md class 'GeoLocation' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-16-rfc9179-geo-cartesian-coordinate-location.md class 'Cartesian' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-16-rfc9179-geo-cartesian-coordinate-location.md class 'Cartesian' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-16-rfc9179-geo-cartesian-coordinate-location.md class 'Cartesian' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-15-rfc9179-geo-ellipsoid-coordinate-location.md class 'Ellipsoid' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-15-rfc9179-geo-ellipsoid-coordinate-location.md class 'Ellipsoid' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-15-rfc9179-geo-ellipsoid-coordinate-location.md class 'Ellipsoid' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-14-rfc9179-geo-reference-frame-definition.md class 'ReferenceFrame' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-14-rfc9179-geo-reference-frame-definition.md class 'GeodeticSystem' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-17-rfc9179-geo-velocity-vector.md class 'Velocity' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-17-rfc9179-geo-velocity-vector.md class 'Velocity' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Feature feat-17-rfc9179-geo-velocity-vector.md class 'Velocity' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'ReferenceFrame' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'GeodeticSystem' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'GeodeticSystem' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'GeodeticSystem' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Ellipsoid' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Ellipsoid' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Ellipsoid' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Cartesian' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Cartesian' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Cartesian' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Velocity' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Velocity' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature.",
+      "Epic epic-04-rfc9179-geo-location.md class 'Velocity' method '[0..1]' is missing a multiplicity (e.g. [1], [0..1], [0..*]) in its return signature."
+    ]
+  },
+  "reproduction_case": {
+    "target_file": "",
+    "snippet_type": "text",
+    "snippet_content": ""
+  }
+}
