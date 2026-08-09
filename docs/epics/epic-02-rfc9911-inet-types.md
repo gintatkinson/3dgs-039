@@ -21,9 +21,13 @@ This Epic encompasses the `ietf-inet-types` YANG utility module defined in RFC 9
 ### Associated Use Cases & User Stories
 
 #### Associated Use Cases
+- [ ] #23 - [[RFC9911-INET] Validate Network Address Instance Against RFC 9911 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-03-validate-network-address-instance-against-rfc-9911-type-constraint.md) (semantic linkage justification)
 Use Cases are deferred to Phase 2 specification engineering.
 
 #### Associated User Stories
+- [ ] #18 - [[RFC9911-INET] IP Address Scope and Zone Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-07-rfc9911-inet-ip-address-scope-and-zone-handling.md) (semantic linkage justification)
+- [ ] #19 - [[RFC9911-INET] Hostname Validation Rules](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-08-rfc9911-inet-hostname-validation-rules.md) (semantic linkage justification)
+- [ ] #20 - [[RFC9911-INET] IP Prefix and Mask Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-09-rfc9911-inet-ip-prefix-and-mask-validation.md) (semantic linkage justification)
 User Stories are deferred to Phase 2 specification engineering.
 
 ## 3. Architecture

@@ -22,9 +22,18 @@ This Epic encompasses the `ietf-yang-types` YANG utility module defined in RFC 9
 ### Associated Use Cases & User Stories
 
 #### Associated Use Cases
+- [ ] #21 - [[RFC9911-YANG] Define Custom Data Type Derived From Base YANG Type](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-01-define-custom-data-type-derived-from-base-yang-type.md) (semantic linkage justification)
+- [ ] #22 - [[RFC9911-YANG] Validate Data Instance Against RFC 9911 Type Constraint](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-02-validate-data-instance-against-rfc-9911-type-constraint.md) (semantic linkage justification)
+- [ ] #24 - [[RFC9911-CROSS] Manage Temporal Data Using RFC 9911 Date and Time Types](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-04-manage-temporal-data-using-rfc-9911-date-and-time-types.md) (semantic linkage justification)
 Use Cases are deferred to Phase 2 specification engineering.
 
 #### Associated User Stories
+- [ ] #12 - [[RFC9911-YANG] Counter Wrapping Behavior](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-01-rfc9911-yang-counter-wrapping-behavior.md) (semantic linkage justification)
+- [ ] #13 - [[RFC9911-YANG] Gauge Value Clamping Behavior](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-02-rfc9911-yang-gauge-value-clamping-behavior.md) (semantic linkage justification)
+- [ ] #14 - [[RFC9911-YANG] Object Identifier Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-03-rfc9911-yang-object-identifier-validation.md) (semantic linkage justification)
+- [ ] #15 - [[RFC9911-YANG] Date-and-Time Formatting and Canonical Form](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-04-rfc9911-yang-date-and-time-formatting-and-canonical-form.md) (semantic linkage justification)
+- [ ] #16 - [[RFC9911-YANG] Timeticks and Timestamp Epoch Handling](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-05-rfc9911-yang-timeticks-and-timestamp-epoch-handling.md) (semantic linkage justification)
+- [ ] #17 - [[RFC9911-YANG] Date and Time Component Validation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-06-rfc9911-yang-date-and-time-component-validation.md) (semantic linkage justification)
 User Stories are deferred to Phase 2 specification engineering.
 
 ## 3. Architecture
