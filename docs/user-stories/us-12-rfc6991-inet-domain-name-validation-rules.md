@@ -158,7 +158,7 @@ sequenceDiagram
     Note over inetModule: Convert to lowercase US-ASCII canonical form
     inetModule-->dnsProvider: canonicalValue : String
 
-    Note over dnsProvider,inetModule: Case-insensitive comparison treats uppercase<br>and lowercase ASCII letters as equivalent
+    Note over dnsProvider,inetModule: Case-insensitive comparison treats uppercase and lowercase ASCII letters as equivalent
 ```
 
 ## UML State Machine Diagram
