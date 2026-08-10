@@ -59,6 +59,96 @@ Server receives configuration or state data containing a geo-location instance t
 - **5f. alternate-system leaf present without feature enablement (Branches from Basic Flow step 2):**
   1. Validator detects a non-null `alternate-system` leaf value in the reference-frame container while the `alternate-systems` feature flag is not activated on the Server.
   2. Validator aborts the transaction with a `feature-violation` error identifying the `alternate-systems` feature as the guard condition, the supplied alternate-system value, and stating that the leaf is only valid when the feature is enabled. The configuration datastore is unmodified.
+- **5g. astronomical-body contains control characters (Branches from Basic Flow step 3):**
+  1. Validator examines the astronomical-body string and detects characters outside the permitted ASCII range 32-64 and 91-126, such as tab or newline control characters.
+  2. Validator aborts the transaction with an invalid-value error specifying the forbidden character and its byte position, and citing RFC 9179 Section 2.1 pattern constraint.
+- **5h. astronomical-body value with leading 'the' prefix (Branches from Basic Flow step 3):**
+  1. Validator detects that the astronomical-body string begins with the word 'the' followed by a space, which the specification explicitly discourages.
+  2. Validator issues a warning-level diagnostic suggesting removal of the leading article but does not abort the transaction; the value is accepted after normalisation.
+- **5i. coord-accuracy negative value (Branches from Basic Flow step 5):**
+  1. Validator examines coord-accuracy and detects a negative decimal64 value, which is semantically invalid for a measurement precision indicator.
+  2. Validator aborts with value-not-in-range error noting that accuracy values must be non-negative and represents precision in meters.
+- **5j. height-accuracy exceeds coord-accuracy by order of magnitude (Branches from Basic Flow step 5):**
+  1. Validator compares height-accuracy against coord-accuracy and detects that height-accuracy is more than 100 times larger, suggesting a possible unit mismatch.
+  2. Validator issues a warning diagnostic flagging the suspicious ratio but accepts both values; the configuration datastore receives the data with the warning annotation.
+- **5k. latitude exceeds 90 degrees (Branches from Basic Flow step 5):**
+  1. Validator examines the latitude leaf and detects a value greater than +90.0 or less than -90.0 decimal degrees.
+  2. Validator aborts with value-not-in-range error identifying the latitude leaf, the permitted range, and the supplied out-of-range value.
+- **5l. longitude exceeds 180 degrees (Branches from Basic Flow step 5):**
+  1. Validator examines the longitude leaf and detects a value outside the canonical range of -180.0 to +180.0 decimal degrees.
+  2. Validator aborts with value-not-in-range error identifying the longitude leaf, the permitted range, and the supplied out-of-range value.
+- **5m. height leaf present with cartesian coordinate case (Branches from Basic Flow step 4):**
+  1. Validator detects that the location choice is resolved to the cartesian case but a height leaf is present, which is defined only under the ellipsoid case.
+  2. Validator rejects the instance with a schema-violation error noting that height belongs to the ellipsoid case and must not appear alongside cartesian coordinates.
+- **5n. x y z values present with ellipsoid coordinate case (Branches from Basic Flow step 4):**
+  1. Validator detects that the location choice is resolved to the ellipsoid case but x, y, or z cartesian leaves are populated.
+  2. Validator rejects with schema-violation error noting that Cartesian coordinates must be exclusively active per the choice constraint.
+- **5o. latitude specified without longitude (Branches from Basic Flow step 5):**
+  1. Validator detects a latitude value present in the ellipsoid case with no corresponding longitude leaf, creating an incomplete coordinate pair.
+  2. Validator issues a warning that the coordinate pair is incomplete and the location may not be precisely resolvable; the instance is accepted with an advisory annotation.
+- **5p. height-accuracy specified without height leaf (Branches from Basic Flow step 5):**
+  1. Validator detects height-accuracy is populated in the geodetic-system but no height leaf exists in the ellipsoid case.
+  2. Validator accepts the instance since height is optional, but issues a note that height-accuracy is irrelevant without height data.
+- **5q. timestamp missing timezone offset (Branches from Basic Flow step 6):**
+  1. Validator examines the timestamp value and detects that it lacks a timezone offset suffix (Z, +HH:MM, or -HH:MM), violating the date-and-time type constraint from RFC 6991.
+  2. Validator rejects with invalid-value error specifying the timestamp leaf and requiring a conformant ISO 8601 date-and-time with timezone.
+- **5r. valid-until uses Z timezone while timestamp uses numeric offset (Branches from Basic Flow step 7):**
+  1. Validator normalizes both timestamp values and detects that one uses the 'Z' UTC designator while the other uses a numeric +HH:MM offset, creating ambiguity in comparison.
+  2. Validator converts both to UTC for comparison but records a diagnostic note that mixed timezone designators may indicate inconsistent reporting.
+- **5s. geodetic-datum value contains uppercase characters not normalised (Branches from Basic Flow step 3):**
+  1. Validator detects uppercase ASCII letters in the geodetic-datum string which the specification recommends converting to lowercase.
+  2. Validator applies case-normalisation silently, converting to lowercase, and accepts the value with a trace log entry recording the normalisation.
+- **5t. geodetic-datum contains spaces instead of dashes (Branches from Basic Flow step 3):**
+  1. Validator detects space characters (' ') in the geodetic-datum value where the IANA registry mandates dashes ('-').
+  2. Validator replaces spaces with dashes per the registry normalisation rule, applies lowercase conversion, and validates against the transformed IANA registry key.
+- **5u. coord-accuracy fraction-digits exceed 6 decimal places (Branches from Basic Flow step 5):**
+  1. Validator examines coord-accuracy and detects more than 6 digits after the decimal point, exceeding the defined fraction-digits limit.
+  2. Validator rejects with value-not-in-range error identifying the coord-accuracy leaf and the 6-fraction-digit maximum.
+- **5v. timestamp value includes negative year (Branches from Basic Flow step 6):**
+  1. Validator detects a negative year component in the timestamp string which is disallowed by the date-and-time type profile per RFC 3339.
+  2. Validator rejects with invalid-value error specifying that the date-and-time type does not permit negative years.
+- **5w. timestamp uses 60 seconds value on non-leap-second date (Branches from Basic Flow step 6):**
+  1. Validator detects a seconds value of 60 in the timestamp and cross-references the date against known leap-second dates from IERS; the date does not correspond to a leap-second insertion.
+  2. Validator rejects with invalid-value error noting that a seconds value of 60 is only valid during leap-second insertions.
+- **5x. velocity component present in validation-only instance (Branches from Basic Flow step 8):**
+  1. Validator detects v-north, v-east, or v-up velocity values in a configuration instance being validated, but the velocity container is not flagged as modified in the edit.
+  2. Validator accepts and validates the velocity values normally, as they are valid optional children of the geo-location container.
+- **5y. velocity v-north fraction-digits exceed 12 decimal places (Branches from Basic Flow step 8):**
+  1. Validator examines v-north and detects more than 12 digits after the decimal point, exceeding the defined fraction-digits limit for velocity components.
+  2. Validator rejects with value-not-in-range error identifying the v-north leaf and the 12-fraction-digit maximum.
+- **5z. empty geo-location container with no location choice (Branches from Basic Flow step 4):**
+  1. Validator encounters a geo-location container where neither the ellipsoid nor cartesian case has any leaf populated, and the location choice is effectively absent.
+  2. Validator accepts the instance since the location choice is optional; the geo-location may contain only reference-frame and temporal attributes.
+- **5aa. geo-location container with only timestamp and no coordinates (Branches from Basic Flow step 6):**
+  1. Validator receives a geo-location instance containing only a timestamp leaf with no coordinate or reference-frame data.
+  2. Validator accepts the instance since all grouped containers are optional; the timestamp alone does not constitute a meaningful location but is structurally valid.
+- **5ab. multiple geo-location instances with identical timestamps (Branches from Basic Flow step 6):**
+  1. Validator detects two geo-location instances for the same entity with identical timestamp values but different coordinate data.
+  2. Validator flags a uniqueness conflict warning identifying both instances and their shared timestamp; both instances are accepted but annotated for operator review.
+- **5ac. astronomical-body set to earth but geodetic-datum is 'me' (moon) (Branches from Basic Flow step 3):**
+  1. Validator detects astronomical-body is earth and geodetic-datum is 'me' (Mean Earth/Polar Axis, defined for the Moon), creating a body-geodetic mismatch.
+  2. Validator rejects with invalid-value error noting that the geodetic-datum 'me' is defined for the moon, not earth; the earth default is 'wgs-84'.
+- **5ad. coord-accuracy value in scientific notation (Branches from Basic Flow step 5):**
+  1. Validator receives coord-accuracy as a decimal64 value expressed in scientific notation (e.g. 1.5e-6) rather than fixed-point decimal notation.
+  2. Validator rejects with invalid-value error noting that decimal64 values must use fixed-point decimal representation with up to 6 fraction-digits.
+- **5ae. latitude value with 17 or more fraction-digits (Branches from Basic Flow step 5):**
+  1. Validator detects latitude has 17 digits after the decimal point, exceeding the 16-fraction-digit YANG decimal64 limit.
+  2. Validator rejects with value-not-in-range error identifying latitude leaf and the 16-fraction-digit maximum.
+- **5af. IANA registry unreachable during geodetic-datum validation (Branches from Basic Flow step 3):**
+  1. Validator attempts to query the IANA Geodetic System Values Registry for geodetic-datum validation but the registry service is unreachable due to network timeout.
+  2. Validator defers registry verification by accepting the geodetic-datum value provisionally and scheduling an asynchronous re-validation; the instance is stored with a pending-verification flag.
+- **5ag. alternate-system value contains special characters outside permitted pattern (Branches from Basic Flow step 2):**
+  1. Validator detects the alternate-system string contains characters outside the permitted ASCII printable range, violating the string pattern constraint.
+  2. Validator rejects with invalid-value error identifying the alternate-system leaf and referencing the permitted character pattern.
+- **5ah. geodetic-datum is empty string (Branches from Basic Flow step 3):**
+  1. Validator encounters an empty string value for geodetic-datum, which is semantically distinct from the leaf being absent.
+  2. Validator treats the empty string as equivalent to absent and applies the default geodetic-datum based on the astronomical-body value, logging a normalisation event.
+- **5ai. valid-until missing timezone offset (Branches from Basic Flow step 7):**
+  1. Validator detects valid-until lacks a timezone suffix while timestamp carries a Z offset, creating comparison ambiguity.
+  2. Validator rejects with invalid-value error requiring both temporal attributes to carry conformant date-and-time values with timezone.
+- **5aj. velocity v-east fraction-digits exceed 12 decimal places (Branches from Basic Flow step 8):**
+  1. Validator detects v-east has more than 12 fraction-digits.
+  2. Validator rejects with value-not-in-range error identifying the v-east leaf and the precision ceiling.
 
 ## 6. Postconditions (Guarantees)
 - **Success Guarantee:** The validated geo-location instance is committed to the NETCONF/RESTCONF configuration datastore. The reference-frame is fully resolved with defaults applied (astronomical-body "earth" and geodetic-datum "wgs-84" when either was absent). All coordinate leaves satisfy their decimal64 fraction-digit precision ceilings. The location choice is exclusively resolved to at most one case. Timestamp and valid-until conform to ISO 8601 date-and-time format with mandatory timezone. The valid-until temporal window, when both timestamps are present, is chronologically valid (valid-until is not earlier than timestamp). The alternate-systems feature guard was respected.
