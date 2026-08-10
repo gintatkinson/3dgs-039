@@ -25,6 +25,7 @@ Defines the frame of reference for geo-location coordinate values. The reference
 classDiagram
     class GeoLocation {
         +ReferenceFrame resolveReferenceFrame() [1]
+        +Boolean selectCoordinateCase(String caseName) [1]
     }
     class ReferenceFrame {
         +String astronomicalBody "[0..1]"

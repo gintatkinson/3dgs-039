@@ -27,6 +27,7 @@ classDiagram
     }
     class Location {
         <<choice>>
+        +Boolean activateCase(String caseName) [1]
     }
     class Ellipsoid {
         +Real latitude "[0..1]"
