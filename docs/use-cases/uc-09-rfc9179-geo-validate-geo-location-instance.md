@@ -76,14 +76,14 @@ graph TD
         UC_TEMP(["Validate Temporal Attributes and Ordering"])
         UC_FEAT(["Validate Feature-Guard Compliance"])
     end
-    Server(["NETCONF/RESTCONF Server"]) --- UC
+    Server(("NETCONF/RESTCONF Server")) --- UC
     UC_RF -. "extend" .-> UC
     UC_PREC -. "extend" .-> UC
     UC_CHOICE -. "extend" .-> UC
     UC_TEMP -. "extend" .-> UC
     UC_FEAT -. "extend" .-> UC
-    UC --- IANA(["IANA Geodetic System Registry"])
-    Server2(["NETCONF/RESTCONF Server"]) -.- Server
+    UC --- IANA(("IANA Geodetic System Registry"))
+    Server2(("NETCONF/RESTCONF Server")) -.- Server
 ```
 
 ### State Machine Diagram

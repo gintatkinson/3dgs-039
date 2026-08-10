@@ -59,6 +59,7 @@ classDiagram
     GeoLocation "1" *-- "0..1" ReferenceFrame : referenceFrame
     ReferenceFrame "1" *-- "0..1" GeodeticSystem : geodeticSystem
     ReferenceFrame "0..1" ..> AlternateSystems : "guarded by"
+    ReferenceFrame "0..1" ..> GeodeticTransform : "computes"
 ```
 
 ## Interface Requirements
