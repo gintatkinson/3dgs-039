@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-08-10T06:42:33.317549Z",
+  "tooling": {
+    "name": "parity_auditor",
+    "version": "1.0.0"
+  },
+  "context": {
+    "command": "skills/spec-orchestrator/scripts/verify_model_coverage.py --spec-only",
+    "exit_code": 1,
+    "downstream_repo": "https://github.com/gintatkinson/3dgs-039.git",
+    "commit_hash": "2b95533b7ed00dee8ef8b56499040fbf7ced84a9"
+  },
+  "failure": {
+    "traceback": "",
+    "error_summary": [
+      "Use Case uc-07-rfc9179-geo-register-geo-location-entity.md must contain at least 57 detailed Alternate/Exception flows. Found only 55 flows. (Referenced features define 57 schema validation constraints, requiring at least that many alternate flows, with a minimum floor of 2.)"
+    ]
+  },
+  "reproduction_case": {
+    "target_file": "",
+    "snippet_type": "text",
+    "snippet_content": ""
+  }
+}

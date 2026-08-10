@@ -22,9 +22,17 @@ This Epic encompasses the `ietf-geo-location` YANG module defined in RFC 9179 (2
 ### Associated Use Cases & User Stories
 
 #### Associated Use Cases
+- [ ] #48 - [[RFC9179-GEO] Register Geo-Location Entity With Coordinate System](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-07-rfc9179-geo-register-geo-location-entity.md) (semantic linkage justification)
+- [ ] #49 - [[RFC9179-GEO] Track Object Motion Using Geo-Location Velocity](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-08-rfc9179-geo-track-object-motion.md) (semantic linkage justification)
+- [ ] #50 - [[RFC9179-GEO] Validate Geo-Location Instance Against RFC 9179 Constraints](https://github.com/gintatkinson/3dgs-039/blob/main/docs/use-cases/uc-09-rfc9179-geo-validate-geo-location-instance.md) (semantic linkage justification)
 Use Cases are deferred to Phase 2 specification engineering.
 
 #### Associated User Stories
+- [ ] #46 - [[RFC9179-GEO] Reference Frame Selection and Geodetic Datum Resolution](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-15-rfc9179-geo-reference-frame-selection-and-geodetic-datum-resolution.md) (semantic linkage justification)
+- [ ] #47 - [[RFC9179-GEO] Ellipsoid Coordinate Validation and Precision](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-16-rfc9179-geo-ellipsoid-coordinate-validation-and-precision.md) (semantic linkage justification)
+- [ ] #44 - [[RFC9179-GEO] Location Coordinate System Choice Resolution](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md) (semantic linkage justification)
+- [ ] #43 - [[RFC9179-GEO] Velocity Vector Computation and Speed Heading Derivation](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-18-rfc9179-geo-velocity-vector-computation-and-speed-heading-derivation.md) (semantic linkage justification)
+- [ ] #45 - [[RFC9179-GEO] Temporal Attribute Staleness and Validity Window](https://github.com/gintatkinson/3dgs-039/blob/main/docs/user-stories/us-19-rfc9179-geo-temporal-attribute-staleness-and-validity-window.md) (semantic linkage justification)
 User Stories are deferred to Phase 2 specification engineering.
 
 ## 3. Architecture

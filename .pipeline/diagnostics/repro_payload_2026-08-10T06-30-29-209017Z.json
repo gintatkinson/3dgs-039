@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-08-10T06:30:29.209017Z",
+  "tooling": {
+    "name": "parity_auditor",
+    "version": "1.0.0"
+  },
+  "context": {
+    "command": "skills/spec-orchestrator/scripts/verify_model_coverage.py --spec-only",
+    "exit_code": 1,
+    "downstream_repo": "https://github.com/gintatkinson/3dgs-039.git",
+    "commit_hash": "2ca9498ccff417c58b95789f4eaeef6a8dcfb256"
+  },
+  "failure": {
+    "traceback": "",
+    "error_summary": [
+      "User Story us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md sequence diagram message 'operator->>geoLocation: requestCoordinateTransform(targetCase: String)' calls operation 'requestCoordinateTransform' which is not defined on class 'GeoLocation' in any class diagram.",
+      "User Story us-17-rfc9179-geo-location-coordinate-system-choice-resolution.md sequence diagram message 'geoLocation->>referenceFrame: fetchTransformParameters()' calls operation 'fetchTransformParameters' which is not defined on class 'ReferenceFrame' in any class diagram.",
+      "Use Case uc-08-rfc9179-geo-track-object-motion.md must contain at least 22 detailed Alternate/Exception flows. Found only 18 flows. (Referenced features define 22 schema validation constraints, requiring at least that many alternate flows, with a minimum floor of 2.)",
+      "Use Case uc-09-rfc9179-geo-validate-geo-location-instance.md use case node 'Server' must be defined inside the system boundary subgraph 'Server System Boundary'.",
+      "Use Case uc-09-rfc9179-geo-validate-geo-location-instance.md use case node 'IANA' must be defined inside the system boundary subgraph 'Server System Boundary'.",
+      "Use Case uc-09-rfc9179-geo-validate-geo-location-instance.md use case node 'Server2' must be defined inside the system boundary subgraph 'Server System Boundary'.",
+      "Use Case uc-09-rfc9179-geo-validate-geo-location-instance.md must contain at least 118 detailed Alternate/Exception flows. Found only 6 flows. (Referenced features define 118 schema validation constraints, requiring at least that many alternate flows, with a minimum floor of 2.)",
+      "Use Case uc-07-rfc9179-geo-register-geo-location-entity.md must contain at least 96 detailed Alternate/Exception flows. Found only 8 flows. (Referenced features define 96 schema validation constraints, requiring at least that many alternate flows, with a minimum floor of 2.)"
+    ]
+  },
+  "reproduction_case": {
+    "target_file": "",
+    "snippet_type": "text",
+    "snippet_content": ""
+  }
+}
