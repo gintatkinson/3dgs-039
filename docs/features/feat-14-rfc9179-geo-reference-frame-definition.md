@@ -26,12 +26,22 @@ classDiagram
     class GeoLocation {
         +ReferenceFrame resolveReferenceFrame() [1]
         +Boolean selectCoordinateCase(String caseName) [1]
+        +GeodeticTransform requestCoordinateTransform(String targetCase) [1]
+    }
+    class GeodeticTransform {
+        +Real scaleX "[1]"
+        +Real scaleY "[1]"
+        +Real scaleZ "[1]"
+        +Real offsetX "[1]"
+        +Real offsetY "[1]"
+        +Real offsetZ "[1]"
     }
     class ReferenceFrame {
         +String astronomicalBody "[0..1]"
         +String alternateSystem "[0..1]"
         +void setAstronomicalBody(String bodyName)
         +GeodeticDatum resolveGeodeticDatum(String bodyName) [1]
+        +GeodeticTransform fetchTransformParameters() [1]
     }
     class GeodeticSystem {
         +String geodeticDatum "[0..1]"
