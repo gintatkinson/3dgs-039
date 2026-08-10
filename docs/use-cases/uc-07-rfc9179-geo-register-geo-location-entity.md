@@ -211,6 +211,12 @@ Network Operator needs to assign a geographic location to a managed entity.
 - **5bc. Timestamp with leap second value of 60 on non-leap-second date (Branches from Basic Flow step 8):**
   1. System detects seconds value of 60 in the timestamp but the date does not correspond to a known leap-second insertion.
   2. System rejects with invalid-value error noting seconds value 60 is only valid during leap seconds; returns Operator to step 8.
+- **5bd. valid-until missing timezone offset (Branches from Basic Flow step 9):**
+  1. System detects valid-until lacks a timezone suffix while timestamp carries a Z offset.
+  2. System rejects with invalid-value error requiring both temporal attributes to carry conformant date-and-time values with timezone.
+- **5be. alternate-system value contains non-printable control characters (Branches from Basic Flow step 2):**
+  1. System detects the alternate-system string contains characters outside the permitted ASCII printable range.
+  2. System rejects with invalid-value error referencing the permitted character pattern and returns the Operator to step 2.
 
 ## 6. Postconditions (Guarantees)
 - **Success Guarantee:** A fully validated geo-location entity is persisted in the system, associated with the target managed entity. The entity carries a resolved reference frame (with astronomical-body, geodetic-datum, and accuracy overrides), exactly one active coordinate case (ellipsoid or Cartesian) with validated coordinate values at the correct decimal precision, an optional velocity vector, a timestamp recording when the location was measured, and an optional validity window. The IANA Geodetic Registry lookup has been cached for the active geodetic-datum.
